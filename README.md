@@ -1,5 +1,8 @@
 # URL Metrics Service
 
+## Goal
+This solution is based on the requirements from the Task for Cloud Platform Team at Sofia Tech Hub and its sole purpose is to satisfy the criteria set by the team.
+
 ## Overview
 This project provides a Python-based service that monitors the availability and response time of two external URLs. It exposes Prometheus-compatible metrics for monitoring. The application is containerized using Docker, deployed with Kubernetes, and managed with Helm.
 
@@ -10,14 +13,27 @@ This project provides a Python-based service that monitors the availability and 
   - [https://httpstat.us/503](https://httpstat.us/503)
   - [https://httpstat.us/200](https://httpstat.us/200)
 - Exposes metrics in Prometheus format.
-- Fully containerized and deployed to Kubernetes using Helm.
+- Fully containerized with Docker and deployed to Kubernetes using Helm.
 
 ---
 
 ## Prerequisites
 - **Docker** installed ([Download Docker](https://www.docker.com/products/docker-desktop)).
-- **Kubernetes** with Minikube ([Install Minikube](https://github.com/kubernetes/minikube/releases/)).
-- **Helm** installed ([Install Helm](https://github.com/helm/helm/releases/)).
+After installation, ensure Docker is running correctly by opening a terminal and typing:
+```bash
+docker --version
+```
+This should return the installed version of Docker.
+- **Kubernetes** with Minikube ([Install Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download#linux)).
+Verify it was successfull with:
+```bash
+minikube version
+```
+- **Helm** installed ([Install Helm](https://helm.sh/docs/intro/install/)).
+Verify it was successfull with:
+```bash
+helm version
+```
 
 ---
 
@@ -66,3 +82,9 @@ Open a browser or use a tool like curl to access the metrics at:
 ```bash
 http://localhost:8000/metrics
 ```
+At the bottom of the Prometheus formated metrics, you can see the 4 custom ones required by this task:
+- sample_external_url_up{url="https://httpstat.us/503"}
+- sample_external_url_up{url="https://httpstat.us/200"}
+- sample_external_url_response_ms{url="https://httpstat.us/503"}
+- sample_external_url_response_ms{url="https://httpstat.us/200"}
+![alt text](<Example Data Screenshot.png>)
