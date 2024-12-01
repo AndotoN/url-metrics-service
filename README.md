@@ -87,4 +87,5 @@ At the bottom of the Prometheus formated metrics, you can see the 4 custom ones 
 - sample_external_url_up{url="https://httpstat.us/200"}
 - sample_external_url_response_ms{url="https://httpstat.us/503"}
 - sample_external_url_response_ms{url="https://httpstat.us/200"}
-![alt text](<Example Data Screenshot.png>)
+
+![Example Data Screenshot](https://github.com/user-attachments/assets/45d722df-52c5-4370-9b66-205aa60b9c6e)
