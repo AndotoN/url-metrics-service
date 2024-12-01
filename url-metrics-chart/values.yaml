@@ -6,5 +6,6 @@ image:
   pullPolicy: IfNotPresent
 
 service:
+  name: url-metrics-service
   type: ClusterIP
   port: 8000
