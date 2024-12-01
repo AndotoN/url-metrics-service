@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: andriannikolaev/url-metrics-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
